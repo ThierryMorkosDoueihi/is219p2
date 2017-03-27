@@ -41,7 +41,17 @@ var mCurrentIndex = 0;
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 var mUrl = 'images.json';
 
+// Holds the retrived JSON information
+var mJson;
+
+// Array holding GalleryImage objects (see below).
+var mImages = [];
+
 // XMLHttpRequest variable
+
+function reqListener () { 
+  console.log(this.responseText); 
+} 
 
 var mRequest = new XMLHttpRequest();
 mRequest.addEventListener("load", reqListener);
@@ -55,9 +65,9 @@ mRequest.onreadystatechange = function() {
 				var item = mJson[key];
 				for(var i = 0; i<item.length; i++){
 					mImages.push(new GalleryImage(item[i]));
-					alert(mImages[i]);
-				}
-			console.log(mJson); 
+				}}
+			console.log(mJson);
+            console.log(mImages); 
 		} catch(err) { 
 			console.log(err.message) 
 		} 
@@ -65,12 +75,6 @@ mRequest.onreadystatechange = function() {
 };
 mRequest.open("GET", mUrl, true);
 mRequest.send();
-
-// Holds the retrived JSON information
-var mJson = JSON.parse(mRequest.responseText);
-
-// Array holding GalleryImage objects (see below).
-var mImages = [];
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
@@ -87,14 +91,7 @@ function swapPhoto() {
 	//with a new image from your images array which is loaded 
 	//from the JSON string
 
-	for(mCurrentIndex; mCurrentIndex < mImages.length; mCurrentIndex++)
-		var currentImgSrc = $("#slideShow").attr("src");
-		var nextSrc = mImages[mCurrentIndex+1]["img"];
-		$("#slideShow").attr("src").text(nextSrc);
-
-		var currentDetails = $("#slideShow").get(".details")
-
-	console.log('swap photo');
+	//console.log('swap photo');
 }
 
 $(document).ready( function() {
@@ -117,7 +114,7 @@ function GalleryImage(item) {
 	//3. the date when the photo was taken
 	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
 	this.location = item["imgLocation"];
-	this.description: = item["description"];
+	this.description = item["description"];
 	this.date = item["date"];
 	this.img = item["imgPath"];
 }
