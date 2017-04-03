@@ -135,7 +135,18 @@ $(document).ready( function() {
 		mCurrentIndex -= 2;
 		swapPhoto();
 	});
+
+	$('#nextPhoto').hover(function() {
+    		$(this).fadeTo('fast', 0.8);
+	}, function() {
+    		$(this).fadeTo('fast', 1);
+	});
 	
+	$('#prevPhoto').hover(function() {
+    		$(this).fadeTo('fast', 0.8);
+	}, function() {
+    		$(this).fadeTo('fast', 1);
+	});
 });
 
 window.addEventListener('load', function() {
