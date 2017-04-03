@@ -4,6 +4,10 @@ body {
 	background-image: url(../img/geometry.jpg);
 }
 
+#photo {
+	width: 518px;
+}
+
 #photoBooth {
 	margin-top: .2em;
 	padding: 10px;
@@ -27,14 +31,11 @@ body {
 .moreIndicator {
 	height: 50px;
 	width: 50px;
-	display: inline;
-	text-align: center;
-	vertical-align: bottom;
-	margin-left: 50%;
 	position: relative;
 	z-index: 3;
 	opacity: .8;
-	bottom: 0px;
+	top: -60px;
+	left: 300px;
 }
 
 .thumbnail {
@@ -61,6 +62,7 @@ body {
 #nextPhoto {
 	height: 42px;
 	width: 42px;
+	float: right;
 }
 
 .details p {
