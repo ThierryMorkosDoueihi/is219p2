@@ -121,6 +121,20 @@ $(document).ready( function() {
 			$('.moreIndicator').addClass('rot90');
 		}
 	});
+
+	$('#nextPhoto').click(function(){
+		currentTime = new Date().getTime();
+		mLastFrameTime = currentTime;
+		swapPhoto();
+		
+	});
+
+	$('#prevPhoto').click(function(){
+		currentTime = new Date().getTime();
+		mLastFrameTime = currentTime;
+		mCurrentIndex -= 2;
+		swapPhoto();
+	});
 	
 });
 
