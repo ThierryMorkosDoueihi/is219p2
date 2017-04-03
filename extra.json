@@ -1,0 +1,34 @@
+{
+    "images": [
+        {
+            "imgPath": "img/Cars/bugatti.jpg",
+            "imgLocation": "Made in Germany",
+            "description": "Buguatti Chiron",
+            "date": "2016"
+        },
+        {
+            "imgPath": "img/Cars/lambo.jpg",
+            "imgLocation": "Made in Germany",
+            "description": "Lamborghini Aventador",
+            "date": "2016"
+        },
+        {
+            "imgPath": "img/Cars/mustang.jpg",
+            "imgLocation": "Made in the USA",
+            "description": "Mustang GT",
+            "date": "1965"
+        },
+        {
+            "imgPath": "img/Cars/carrera.jpg",
+            "imgLocation": "Made in Germany",
+            "description": "Carrera 911",
+            "date": "2016"
+        },
+        {
+            "imgPath": "img/Cars/ferrari.jpg",
+            "imgLocation": "Made in Italy",
+            "description": "Ferrari F12",
+            "date": "2016"
+        }
+  ]
+}
